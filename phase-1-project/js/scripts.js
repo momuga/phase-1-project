@@ -174,7 +174,14 @@
                 tr9.appendChild(td12);
                 let td13 = document.createElement('td');
                 td13.setAttribute("class", `text-center`);
-                td13.innerHTML = Object.values(country.languages).toString().split(",").join("<br/>");
+                if(country.languages)
+                {
+                    td13.innerHTML = Object.values(country.languages).toString().split(",").join("<br/>");    
+                }
+                else
+                {
+                    td13.textContent = "Languages not Listed";
+                }
                 tr9.appendChild(td13);
                 countryDetails.appendChild(tr9);
 
@@ -186,14 +193,21 @@
                 tr12.appendChild(td18);
                 let td19 = document.createElement('td');
                 td19.setAttribute("class", `text-center`);
-                const { currencies } = country;
-                const currencyInfo = (legend) => Object.keys(currencies).map(gloss => currencies[gloss][legend]);
-                let currencyDetails = currencyInfo('name');
-                let herald = currencyInfo("symbol");
-                let currencyUnits = currencyDetails.toString();
-                let currencyChar = herald.toString();
-                let currencyContent = currencyRender(currencyUnits, currencyChar);
-                td19.innerHTML = currencyContent;
+                if(country.currencies)
+                {
+                    const { currencies } = country;
+                    const currencyInfo = (legend) => Object.keys(currencies).map(gloss => currencies[gloss][legend]);
+                    let currencyDetails = currencyInfo('name');
+                    let herald = currencyInfo("symbol");
+                    let currencyUnits = currencyDetails.toString();
+                    let currencyChar = herald.toString();
+                    let currencyContent = currencyRender(currencyUnits, currencyChar);
+                    td19.innerHTML = currencyContent;
+                }
+                else
+                {
+                    td19.textContent = "Currency not Listed";
+                }
                 tr12.appendChild(td19);
                 countryDetails.appendChild(tr12);
 
@@ -297,7 +311,14 @@
                 tr9.appendChild(td12);
                 let td13 = document.createElement('td');
                 td13.setAttribute("class", `text-center`);
-                td13.innerHTML = Object.values(country.languages).toString().split(",").join("<br/>");
+                if(country.languages)
+                {
+                    td13.innerHTML = Object.values(country.languages).toString().split(",").join("<br/>");    
+                }
+                else
+                {
+                    td13.textContent = "Languages not Listed";
+                }
                 tr9.appendChild(td13);
                 countryDetails.appendChild(tr9);
 
@@ -309,14 +330,21 @@
                 tr12.appendChild(td18);
                 let td19 = document.createElement('td');
                 td19.setAttribute("class", `text-center`);
-                const { currencies } = country;
-                const currencyInfo = (legend) => Object.keys(currencies).map(gloss => currencies[gloss][legend]);
-                let currencyDetails = currencyInfo('name');
-                let herald = currencyInfo("symbol");
-                let currencyUnits = currencyDetails.toString();
-                let currencyChar = herald.toString();
-                let currencyContent = currencyRender(currencyUnits, currencyChar);
-                td19.innerHTML = currencyContent;
+                if(country.currencies)
+                {
+                    const { currencies } = country;
+                    const currencyInfo2 = (legend) => Object.keys(currencies).map(gloss => currencies[gloss][legend]);
+                    let currencyDetails = currencyInfo2('name');
+                    let herald = currencyInfo2("symbol");
+                    let currencyUnits = currencyDetails.toString();
+                    let currencyChar = herald.toString();
+                    let currencyContent = currencyRender(currencyUnits, currencyChar);
+                    td19.innerHTML = currencyContent;
+                }
+                else
+                {
+                    td19.textContent = "Currency not Listed";
+                }
                 tr12.appendChild(td19);
                 countryDetails.appendChild(tr12);
 
