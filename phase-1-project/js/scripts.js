@@ -64,6 +64,8 @@
                                 tr13.appendChild(td20);
                                 countryDetails2.appendChild(tr13);
                             }
+
+                            console.log(error.message);
                         });
                     }
                 })
@@ -365,7 +367,19 @@
 
     function currencyRender(details, sign)
     {
-        let detailsOperation = details.split(",");
+
+        let currencyFormat = details.toLowerCase().split(" ");
+
+        let formatTally = currencyFormat.length-1;
+
+        for(let a = 0; a<=formatTally; a++)
+        {
+            currencyFormat[a] = currencyFormat[a].charAt(0).toUpperCase() + currencyFormat[a].substring(1);
+        }
+
+        let formatMerge = currencyFormat.join(" ");
+
+        let detailsOperation = formatMerge.split(",");
         let signOperation = sign.split(",");
 
         let girth = detailsOperation.length;
