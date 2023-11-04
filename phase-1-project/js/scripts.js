@@ -367,19 +367,7 @@
 
     function currencyRender(details, sign)
     {
-
-        let currencyFormat = details.toLowerCase().split(" ");
-
-        let formatTally = currencyFormat.length-1;
-
-        for(let a = 0; a<=formatTally; a++)
-        {
-            currencyFormat[a] = currencyFormat[a].charAt(0).toUpperCase() + currencyFormat[a].substring(1);
-        }
-
-        let formatMerge = currencyFormat.join(" ");
-
-        let detailsOperation = formatMerge.split(",");
+        let detailsOperation = details.split(",");
         let signOperation = sign.split(",");
 
         let girth = detailsOperation.length;
