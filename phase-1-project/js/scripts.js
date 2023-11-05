@@ -161,8 +161,11 @@
                 let td17 = document.createElement('td');
                 td17.setAttribute("class", `text-center`);
                 areaValue = renderText(country.area, 3);
+                let indexFormat= document.createElement('sup');
+                indexFormat.textContent= "2";
                 areaExponent = "2";
-                td17.innerHTML = `${areaValue} km${areaExponent.sup()}`;
+                td17.textContent = `${areaValue} km`;
+                td17.appendChild(indexFormat);
                 tr11.appendChild(td17);
                 countryDetails.appendChild(tr11);
 
@@ -298,8 +301,11 @@
                 let td17 = document.createElement('td');
                 td17.setAttribute("class", `text-center`);
                 areaValue = renderText(country.area, 3);
+                let indexFormat= document.createElement('sup');
+                indexFormat.textContent= "2";
                 areaExponent = "2";
-                td17.innerHTML = `${areaValue} km${areaExponent.sup()}`;
+                td17.textContent = `${areaValue} km`;
+                td17.appendChild(indexFormat);
                 tr11.appendChild(td17);
                 countryDetails.appendChild(tr11);
 
